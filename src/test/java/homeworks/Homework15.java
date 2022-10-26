@@ -40,6 +40,10 @@ public class Homework15 {
 
         // Can you please advise how I can locate CSS selector for "Pluto"
 
+        WebElement songPluto = driver.findElement(By.cssSelector("section.songs > ul > article > span.main > span.details"));
+        //lets try adding letter s in span.detail
+        System.out.println(songPluto.getText());
+        driver.quit();
 
     }
 }
