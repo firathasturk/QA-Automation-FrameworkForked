@@ -12,7 +12,7 @@ import java.time.Duration;
 public class Homework16 {
 
     @Test
-    public void createNewPlaylist(){
+    public void createNewPlaylist() throws InterruptedException {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -31,9 +31,17 @@ public class Homework16 {
         WebElement submitButton = driver.findElement(By.cssSelector("[type = 'submit']"));
         submitButton.click();
 
-        By createNewPlaylist = By.xpath("//i[@role='button']");
-        By NewPlaylist = By.xpath("//input[@name='name']");
-        driver.findElement(By.xpath("//a[@class='active']"));
+        WebElement createNewPlaylist = driver.findElement(By.xpath("//i[@title='Create a new playlist']"));
+        Thread.sleep(2000);
+        createNewPlaylist.click();
+       WebElement newPlaylist  = driver.findElement(By.xpath("//*[contains(text(),'New Playlist']"));
+        newPlaylist.click();
+        WebElement newPlaylistNameField = driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]"));
+        newPlaylistNameField.sendKeys("firathasturk");
+        newPlaylistNameField.click();
+
+        WebElement newPlaylist1 = driver.findElement(By.xpath("//*[@class='playlist']"));
+        Assert.assertTrue(newPlaylist1.isDisplayed());
         driver.quit();
 
 
