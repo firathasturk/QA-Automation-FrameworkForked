@@ -34,13 +34,16 @@ public class Homework16 {
         WebElement createNewPlaylist = driver.findElement(By.xpath("//i[@title='Create a new playlist']"));
         Thread.sleep(2000);
         createNewPlaylist.click();
+
        WebElement newPlaylist  = driver.findElement(By.xpath("//*[contains(text(),'New Playlist']"));
         newPlaylist.click();
+
         WebElement newPlaylistNameField = driver.findElement(By.xpath("//*[contains(@placeholder, 'to save')]"));
         newPlaylistNameField.sendKeys("firathasturk");
         newPlaylistNameField.click();
 
-        WebElement newPlaylist1 = driver.findElement(By.xpath("//*[@class='playlist']"));
+        WebElement newPlaylist1= driver.findElement(By.xpath("//*[contains(@href, '#!/playlist/26085')]"));
+        Thread.sleep(2000);
         Assert.assertTrue(newPlaylist1.isDisplayed());
         driver.quit();
 
