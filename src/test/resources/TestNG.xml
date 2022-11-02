@@ -5,9 +5,12 @@
 
     <test name="Example Test" preserve-order="false">
         <classes>
-            <class name="LoginTests"/>
-            <class name="BaseTest"/>
-            <class name="RegistrationTests"/>
+<!--            <class name="LoginTests"/>-->
+<!--            <class name="BaseTest"/>-->
+<!--            <class name="RegistrationTests"/>-->
+<!--            <class name="homeworks.homework14"/>-->
+<!--            <class name="homeworks.Homework16"/>-->
+            <class name="homeworks.Homework17"/>
         </classes>
     </test>
 </suite>
